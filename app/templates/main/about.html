@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="display-4 mb-4">About Flask Shop</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <p class="lead">Welcome to Flask Shop, your one-stop destination for quality products and exceptional service.</p>
+            <p>At Flask Shop, we believe in providing our customers with:</p>
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <h5>🛍️ Quality Products</h5>
+                    <p>We carefully curate our selection to ensure only the best products make it to our shelves.</p>
+                </li>
+                <li class="mb-3">
+                    <h5>🚚 Fast Delivery</h5>
+                    <p>We partner with reliable shipping providers to ensure your orders reach you quickly and safely.</p>
+                </li>
+                <li class="mb-3">
+                    <h5>💫 Great Customer Service</h5>
+                    <p>Our dedicated support team is always ready to assist you with any questions or concerns.</p>
+                </li>
+                <li class="mb-3">
+                    <h5>🔒 Secure Shopping</h5>
+                    <p>Shop with confidence knowing your personal information is protected.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Information</h5>
+                    <address>
+                        <strong>Flask Shop Headquarters</strong><br>
+                        123 Shop Street<br>
+                        City, Country<br>
+                        <br>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@flaskshop.com">info@flaskshop.com</a><br>
+                        <br>
+                        <strong>Phone:</strong><br>
+                        +1 234 567 890
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

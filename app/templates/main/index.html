@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="jumbotron text-center mb-5">
+        <h1 class="display-4">Welcome to Flask Shop</h1>
+        <p class="lead">Your one-stop destination for quality products at great prices.</p>
+        <hr class="my-4">
+        <p>Explore our wide range of products and find exactly what you're looking for.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('shop.index') }}" role="button">Start Shopping</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-truck display-4 text-primary mb-3"></i>
+                    <h3 class="card-title">Fast Delivery</h3>
+                    <p class="card-text">Get your orders delivered quickly and securely to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                    <h3 class="card-title">Secure Shopping</h3>
+                    <p class="card-text">Shop with confidence knowing your data is protected.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-headset display-4 text-primary mb-3"></i>
+                    <h3 class="card-title">24/7 Support</h3>
+                    <p class="card-text">Our customer service team is always here to help you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Featured Products</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Product 1</h5>
+                    <p class="card-text">High-quality product with amazing features.</p>
+                    <p class="card-text"><strong>$99.99</strong></p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Product 2</h5>
+                    <p class="card-text">Another great product you'll love.</p>
+                    <p class="card-text"><strong>$79.99</strong></p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Product 3</h5>
+                    <p class="card-text">Premium quality at an affordable price.</p>
+                    <p class="card-text"><strong>$89.99</strong></p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

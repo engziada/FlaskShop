@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if product %}Edit Product{% else %}New Product{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">
+                        {% if product %}Edit Product{% else %}New Product{% endif %}
+                    </h1>
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="name" name="name" 
+                                   value="{{ product.name if product else '' }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" name="description" 
+                                      rows="4" required>{{ product.description if product else '' }}</textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="price" name="price" 
+                                           step="0.01" min="0" value="{{ "%.2f"|format(product.price) if product else '' }}" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="stock" class="form-label">Stock</label>
+                                <input type="number" class="form-control" id="stock" name="stock" 
+                                       min="0" value="{{ product.stock if product else '0' }}" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="category_id" class="form-label">Category</label>
+                            <select class="form-select" id="category_id" name="category_id" required>
+                                <option value="">Select a category</option>
+                                {% for category in categories %}
+                                <option value="{{ category.id }}" 
+                                        {% if product and product.category_id == category.id %}selected{% endif %}>
+                                    {{ category.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Product Image</label>
+                            {% if product and product.image_url %}
+                            <div class="mb-2">
+                                <img src="{{ product.image_url }}" alt="{{ product.name }}" 
+                                     style="max-width: 200px; max-height: 200px;">
+                            </div>
+                            {% endif %}
+                            <input type="file" class="form-control" id="image" name="image" 
+                                   accept="image/*" {% if not product %}required{% endif %}>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                {% if product %}Update Product{% else %}Create Product{% endif %}
+                            </button>
+                            <a href="{{ url_for('admin.products') }}" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% end
